@@ -1,8 +1,10 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"
 
+
+
 let {
-  description
+  title, description, installation, usage, license, contributions, tests, githubName, email
 } = await inquirer
   .prompt([{
       type: 'input',
