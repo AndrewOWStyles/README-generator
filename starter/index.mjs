@@ -42,8 +42,8 @@ let {
     },
     {
       type: 'input',
-      name: 'github name',
-      message: "what is your github name? e.g. github.com/(github name)",
+      name: 'githubName',
+      message: "what is your github name? e.g. github.com/(githubName)",
     },
     {
       type: 'input',
@@ -57,14 +57,39 @@ let READMEText = `
     # ${title}
 
     ## Description
-        ${description}
+      ${description}
+
+    ## Table of Contents
+      - [Installation](#installation)
+      - [Usage](#usage)
+      - [License](#license)
+      - [Contributions](#contributions)
+      - [Tests](#tests)
+      - [Questions](#questions)
+
+    ## Installation
+      ${installation}
+
+    ## Usage
+      ${usage}
+
+    ## License
+      This project is licensed under the ${generateLicense(license)} license.
+    
+    ## Contributions
+      ${contributions}
+
+    ## Tests
+      ${tests}
+    
+    ## Questions
+    Created by [${githubName}](https://github.com/${githubName})  
+    For questions or feedback, contact me at ${email}
 `
 
 
 fs.writeFile("README.md", READMEText)
 
-// when selecting license use a list to pick
-// create a function and call it in the READMEText using ${generateLicense(license)}
 
 function generateLicense() {
   if (license === "MIT") {
